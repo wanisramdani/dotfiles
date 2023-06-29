@@ -1,0 +1,104 @@
+live_config_reload: true
+
+# Set the window Width and Height in console columns.
+# The window size will change if the font size changes.
+window:
+  dimensions:
+    columns: 110
+    lines: 30
+  decorations: full
+  startup_mode: Windowed
+  title: "Alacritty"
+  dynamic_title: true
+
+# Scrolling history and multiplier
+scrolling:
+  history: 10000
+  multiplier: 3
+# Font family and style
+font:
+  normal:
+    family: "JetBrainsMono Nerd Font"
+    style: Regular
+  bold:
+    family: "JetBrainsMono Nerd Font"
+    style: Bold
+  italic:
+    family: "JetBrainsMono Nerd Font"
+    style: italic
+  bold_italic:
+    family: "JetBrainsMono Nerd Font"
+    style: Bold Italic
+  size: 12.0
+  offset:
+    x: 0
+    y: 0
+  draw_bold_text_with_bright_colors: false
+# Background opacity from 0.0 transparent, 1.0 Opaque
+window:
+  opacity: 0.9
+  padding:
+    x: 18
+    y: 16
+  dynamic_padding: false
+
+# Terminal colors
+# TokyoNight Alacritty Colors
+colors:
+  # Default colors
+  primary:
+    background: '0x1a1b26'
+    foreground: '0xc0caf5'
+
+  # Normal colors
+  normal:
+    black:   '0x15161e'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
+
+  # Bright colors
+  bright:
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
+
+# Cursor styling
+cursor:
+  style: Beam
+  thickness: 0.2
+  unfocused_hollow: false
+  blink_interval: 750
+
+################################################################################
+# ███████╗██╗  ██╗ ██████╗ ██████╗ ████████╗ ██████╗██╗   ██╗████████╗███████╗ #
+# ██╔════╝██║  ██║██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██║   ██║╚══██╔══╝██╔════╝ #
+# ███████╗███████║██║   ██║██████╔╝   ██║   ██║     ██║   ██║   ██║   ███████╗ #
+# ╚════██║██╔══██║██║   ██║██╔══██╗   ██║   ██║     ██║   ██║   ██║   ╚════██║ #
+# ███████║██║  ██║╚██████╔╝██║  ██║   ██║   ╚██████╗╚██████╔╝   ██║   ███████║ #
+# ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═════╝    ╚═╝   ╚══════╝ #
+################################################################################                                                                            
+
+# Mouse
+mouse_bindings:
+ - { mouse: Right, action: Paste }
+
+# Keyboard
+key_bindings:
+ - { key: C, mods: Control|Shift, action: Copy }
+ - { key: V, mods: Control|Shift, action: Paste }
+ - { key: C, mods: Control, mode: Vi, action: ClearSelection }
+
