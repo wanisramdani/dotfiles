@@ -1,3 +1,7 @@
+this script should install awesomeWM and all other needed libs/apps
+install git, vim, nvim, stow, chrome, 
+copy rofi to config
+
 # Wallpaper 
 sudo apt install variety feh
 
