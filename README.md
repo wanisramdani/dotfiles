@@ -10,7 +10,27 @@ https://starship.rs/
 
 # Neovim plugins
 
-- [Packer](https://github.com/wbthomason/packer.nvim) 
+If you install nvim through `apt` you get v0.6 this config works with v0.8+ (0.9.1 currently)
+ 
+```
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+```
+ 
+you may get the following error `AppImages require FUSE to run.` just install `FUSE`
+ 
+```
+sudo apt-get install fuse libfuse2
+```
+
+- [Packer](https://github.com/wbthomason/packer.nvim)
+Install packer first 
+
+```
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
 
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 
