@@ -11,7 +11,15 @@ https://starship.rs/
 # Neovim plugins
 
 If you install nvim through `apt` you get v0.6 this config works with v0.8+ (0.9.1 currently)
- 
+
+you can use snap to get the latest version
+
+```
+sudo snap install nvim
+```
+
+ or use appimage
+
 ```
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
