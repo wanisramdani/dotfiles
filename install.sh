@@ -1,20 +1,30 @@
 #!/bin/bash
-
 # this whole process can be done in a better way but it works for now
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-DOT_FOLDER="nvim,alacritty" # TODO:get all folders in dotfiles
 TARGET_DIR=$HOME/.config
 TEST_DIR=$HOME/stow
 
-for folder in $(echo $DOT_FOLDER | sed "s/,/ /g" ); do 
+git submodule init
+git submodule update
+
+folders=()
+
+folder_list=$(ls -d */ 2>/dev/null)
+
+for folder in $folder_list; do
+  folder=${folder%/}
+  folders+=("$folder")
+done
+
+for folder in "${folders[@]}"; do
 	echo "Checking for folder :: $folder"
 	if [ ! -d $TEST_DIR/$folder ]; then
 		echo "Creating folder :: $folder"
-		mkdir "$HOME/stow/$folder"
+		mkdir "$TARGET_DIR/$folder"
 		echo "Linking folder"
-#		stow -t $TEST_DIR/$folder -nv $folder 
-		stow -t $TEST_DIR/$folder -v $folder
+		stow -t $TARGET_DIR/$folder -nv $folder 
+		stow -t $TARGET_DIR/$folder -v $folder
 		echo "=============================="
 	else
 		echo "This folder already exist :: $folder"
@@ -25,3 +35,4 @@ echo "Linking done."
 
 echo "Realoading shell..."
 exec $SHELL -l 
+
